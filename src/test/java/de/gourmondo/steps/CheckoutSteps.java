@@ -74,4 +74,7 @@ public class CheckoutSteps extends ScenarioSteps {
     public void clickOnBuyNow() {
         checkoutPage.finalStep();
     }
+
+    @Step
+    public void confirmAdyen(){checkoutPage.finalAdyen();}
 }

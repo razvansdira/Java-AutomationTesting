@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CheckoutPage extends PageObject {
 
-    @FindBy(css = "[data-delivery-mode=\"DPD-GOURMONDO-DE\"]")
+    @FindBy(css = "[data-delivery-mode=\"DPD-GOURMONDO-DE_FLATRATE\"]")
     private WebElement dpdDelivery;
 
     @FindBy(css = "[alt=\"Vorkasse\"]")
@@ -28,6 +28,9 @@ public class CheckoutPage extends PageObject {
 
     @FindBy(css = "[for=\"newsletterSubscrCheck\"] div span")
     private WebElementFacade newsletter;
+
+    @FindBy(css = "#mainSubmit")
+    private WebElementFacade adyenButton;
 
     public void markCheckbox() {
         JavascriptExecutor jse = (JavascriptExecutor) getDriver();
@@ -65,4 +68,6 @@ public class CheckoutPage extends PageObject {
     public void finalStep() {
         finalButton.click();
     }
+
+    public void finalAdyen(){adyenButton.click();}
 }

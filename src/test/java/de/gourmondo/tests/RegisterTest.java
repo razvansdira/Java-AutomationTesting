@@ -1,5 +1,6 @@
 package de.gourmondo.tests;
 
+import de.gourmondo.steps.LoginSteps;
 import de.gourmondo.steps.RandomSteps;
 import de.gourmondo.steps.RegisterSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -27,6 +28,7 @@ public class RegisterTest {
 
     @Steps
     private RegisterSteps registerSteps;
+    private LoginSteps loginSteps;
 
     private String fname, lname, email, pas1, pas2, message;
 
@@ -47,5 +49,39 @@ public class RegisterTest {
         registerSteps.acceptConditions();
         registerSteps.sendRegister();
         registerSteps.checkIfRegistrationFailed(message);
+    }
+
+    private String companyname, companynumber, companyfirstname, companylastname, compemail, passw, repass, user, pass, key, status;
+
+    @Test
+    public void test02IfCompanyRegisterWorks(){
+        registerSteps.navigateToHomePage();
+        registerSteps.navigateToLoginPage();
+        registerSteps.navigateToRegisterPage();
+        registerSteps.selectRegisterMode();
+        registerSteps.inputCompanyName(companyname);
+        registerSteps.inputCompanyNumber(companynumber);
+        registerSteps.inputCompanyFirstName(companyfirstname);
+        registerSteps.inputCompanyLastName(companylastname);
+        registerSteps.selectCompanyDay();
+        registerSteps.selectCompanyMonth();
+        registerSteps.selectCompanyYear();
+        registerSteps.inputCompanyEmail(compemail);
+        registerSteps.inputPasswrd(passw);
+        registerSteps.checkPassword(repass);
+        registerSteps.termsAndCondition();
+        registerSteps.finalButton();
+        registerSteps.loginHmc(user, pass);
+        registerSteps.inputUser();
+        registerSteps.inputCustomers();
+        registerSteps.inputId(key);
+        registerSteps.search();
+        registerSteps.selectItem();
+        registerSteps.openDropdownMenu();
+        registerSteps.approveAccount(status);
+        registerSteps.saveInformation();
+        registerSteps.navigateToHomePage();
+        registerSteps.navigateToLoginPage();
+        registerSteps.finalLogin(compemail, passw);
     }
 }

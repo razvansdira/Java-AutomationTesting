@@ -26,6 +26,6 @@ public class LoginSteps extends ScenarioSteps {
     }
     @Step
     public void checkIfUserWasLoggedIn(){
-        assertTrue(getDriver().getCurrentUrl().equals("https://test.gourmondo.de/my-account"));
+        assertTrue(getDriver().getCurrentUrl().equals("https://dev-de.gourmondo.de/"));
     }
 }

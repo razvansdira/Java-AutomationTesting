@@ -14,9 +14,10 @@ import java.util.Random;
 //@DefaultUrl("https://common.gourmondo.de/")
 //@DefaultUrl("https://dev-de.gourmondo.de/")
 //@DefaultUrl("https://dev-int.gourmondo.de/")
-@DefaultUrl("https://test.gourmondo.de/")
+//@DefaultUrl("https://test.gourmondo.de/")
 //@DefaultUrl("https://test-de.gourmondo.evozon.com/")
 //@DefaultUrl("https://www.gourmondo.de/")
+@DefaultUrl("https://stage.gourmondo.de/")
 
 public class HomePage extends PageObject {
 

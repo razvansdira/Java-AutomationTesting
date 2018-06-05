@@ -1,5 +1,6 @@
 package de.gourmondo.pages;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -54,6 +55,7 @@ public class PDPage extends PageObject {
     public void goToCart() {
         cart.click();
     }
+
 // de refacut conditia sa fie peste 25, momentan doar adauga odata.... sau de foarte multe ori
 
     public String increaseQuantity() {
@@ -62,9 +64,15 @@ public class PDPage extends PageObject {
 //       float totalCart = price.getText().length();
 //        System.out.println("totalul este "+ totalCart);
 
-        do {
+//        do {
+//            increaseQty.click();
+//        } while (price.size() <= 25);
+//        return "25";
+
+        if(price.size() <= 5)
             increaseQty.click();
-        } while (price.size() <= 25);
+        else
+            cart.click();
         return "";
     }
 

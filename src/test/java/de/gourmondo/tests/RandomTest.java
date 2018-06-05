@@ -33,5 +33,16 @@ public class RandomTest {
         randomSteps.selectRandomCategory();
         randomSteps.selectRandomSubcategory();
         randomSteps.selectRandomProduct();
+        randomSteps.closePopUp();
+
+        randomSteps.navigateToCategories();
+        randomSteps.selectRandomCategory();
+        randomSteps.selectRandomSubcategory();
+        randomSteps.selectRandomProduct();
+
+        randomSteps.navigateToCategories();
+        randomSteps.selectRandomCategory();
+        randomSteps.selectRandomSubcategory();
+        randomSteps.selectRandomProduct();
     }
 }

@@ -19,7 +19,7 @@ public class LoginPage extends PageObject {
     private WebElement registerButton;
 
     public void login(String email, String pass){
-        inputEmail.sendKeys("razvan.sdira@evozon.com");
+        inputEmail.sendKeys("sdr16@mailinator.com");
         inputPass.sendKeys("rererere");
         loginButton.click();
     }

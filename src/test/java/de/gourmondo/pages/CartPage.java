@@ -1,5 +1,6 @@
 package de.gourmondo.pages;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,10 @@ public class CartPage extends PageObject {
     private WebElement amazonBtn;
 
     public void modifyQuantity(String qty) {
-        quantityField.sendKeys("10");
+        if(checkoutButton.isEnabled()){}
+//            proceedCheckout();
+        else
+            quantityField.sendKeys("15");
         waitABit(2000);
     }
 

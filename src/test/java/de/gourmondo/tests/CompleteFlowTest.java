@@ -68,12 +68,13 @@ public class CompleteFlowTest {
         completeFlowSteps.nextDelivery();
         completeFlowSteps.nextPayment();
 
-        completeFlowSteps.clickOnDeliveryMethod();
+//        completeFlowSteps.clickOnDeliveryMethod();
         completeFlowSteps.clickOnPaymentMethod();
         completeFlowSteps.clickOnVoucherButton();
         completeFlowSteps.inputVoucherCode(code);
         completeFlowSteps.submitVoucherCode();
         completeFlowSteps.markBoxNews();
         completeFlowSteps.clickOnBuyNow();
+        completeFlowSteps.confirmAdyen();
     }
 }

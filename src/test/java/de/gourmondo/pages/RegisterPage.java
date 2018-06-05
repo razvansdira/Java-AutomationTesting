@@ -59,7 +59,10 @@ public class RegisterPage extends PageObject {
     @FindBy(css = "[class=\"alert positive\"] div")
     private WebElementFacade successMessage;
 
-    public String getRegisterMessage(){return successMessage.getText();}
+
+    public String getRegisterMessage() {
+        return successMessage.getText();
+    }
 
     public void submitForm() {
         submit.click();
@@ -118,4 +121,111 @@ public class RegisterPage extends PageObject {
 //            System.out.println("The options are " + elem.getAttribute("value") + " ");
 //        }
     }
+
+
+//  B2B register
+
+    @FindBy(css = "[for=\"businessClient\"]")
+    private WebElementFacade selectCompanyRegister;
+
+    @FindBy(css = "#registerCompanyForm-company")
+    private WebElementFacade companyName;
+
+    @FindBy(css = "#registerCompanyForm-companyNumber")
+    private WebElementFacade companyNumber;
+
+    @FindBy(css = "#registerCompanyForm-firstName")
+    private WebElementFacade companyFirstName;
+
+    @FindBy(css = "#registerCompanyForm-lastName")
+    private WebElementFacade companyLastName;
+
+    @FindBy(css = "[data-id=\"registerCompanyForm-birthday-day\"]")
+    private WebElementFacade companyDay;
+
+    @FindBy(css = "[id=\"registerCompanyForm\"] [class=\"form-group-composed form-group-1-to-3\"] div ul li a")
+    private WebElementFacade selectCompanyDay;
+
+    @FindBy(css = "[data-id=\"registerCompanyForm-birthday-month\"]")
+    private WebElementFacade companyMonth;
+
+    @FindBy(xpath = "//*[@id=\"registerCompanyForm\"]/div[5]/div[2]/div[1]/div/ul/li[1]")
+    private WebElementFacade slctCompanyMonth;
+
+    @FindBy(css = "[data-id=\"registerCompanyForm-birthday-year\"]")
+    private WebElementFacade companyYear;
+
+    @FindBy(css = "[class=\"btn-group bootstrap-select  birth-year js-birth-year select-picker-wrapper dropup open\"] div ul li a")
+    private WebElementFacade selectCompanyYear;
+
+    @FindBy(css = "#registerCompanyForm-email")
+    private WebElementFacade companyEmail;
+
+    @FindBy(css = "#registerCompanyForm-pwd")
+    private WebElementFacade compPwd;
+
+    @FindBy(css = "#registerCompanyForm-checkPwd")
+    private WebElementFacade checkPwd;
+
+    @FindBy(css = "[for=\"registerCompanyForm-termsConditionsCheck\"] span")
+    private WebElementFacade terms;
+
+    @FindBy(css = "#registerCompanyForm > button")
+    private WebElementFacade register;
+
+
+    public void setRegisterMode() {
+        selectCompanyRegister.click();
+    }
+
+    public void inputCompanyName(String companyname) {
+        companyName.sendKeys("GoDe");
+    }
+
+    public void inputCompanyNumber(String companynumber) {
+        companyNumber.sendKeys("DE123456789");
+    }
+
+    public void inputCompanyFirstName(String firstname) {
+        companyFirstName.sendKeys("Automation");
+    }
+
+    public void inputCompanyLastName(String lastname) {
+        companyLastName.sendKeys("Test");
+    }
+
+    public void setCompanyDay() {
+        companyDay.click();
+        selectCompanyDay.click();
+    }
+
+    public void setCompanyMonth() {
+        companyMonth.click();
+        slctCompanyMonth.click();
+    }
+
+    public void setCompanyYear() {
+        companyYear.click();
+        selectCompanyYear.click();
+    }
+
+    public void setCompanyEmail(String compemail) {
+        companyEmail.sendKeys("sdr16@mailinator.com");
+    }
+
+    public void setPassword(String passw) {
+        compPwd.sendKeys("rererere");
+    }
+
+    public void checkPassword(String repass) {
+        checkPwd.sendKeys("rererere");
+    }
+
+    public void acceptConditions() {
+        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        terms.click();
+    }
+
+    public void sendRegisterCompanyForm(){register.click();}
 }

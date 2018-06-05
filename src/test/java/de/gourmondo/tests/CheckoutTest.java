@@ -43,5 +43,6 @@ public class CheckoutTest {
         checkoutSteps.inputVoucherCode(code);
         checkoutSteps.submitVoucherCode();
         checkoutSteps.clickOnBuyNow();
+        checkoutSteps.confirmAdyen();
     }
 }

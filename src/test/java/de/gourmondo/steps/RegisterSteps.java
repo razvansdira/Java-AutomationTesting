@@ -12,6 +12,8 @@ public class RegisterSteps extends ScenarioSteps {
     private LoginPage loginPage;
     private RegisterPage registerPage;
     private MyAccountPage myAccountPage;
+    private HmcLoginPage hmcLoginPage;
+    private HmcPages hmcPages;
 
     @Step
     public void navigateToHomePage() {homePage.open();}
@@ -59,4 +61,75 @@ public class RegisterSteps extends ScenarioSteps {
     public void checkIfRegistrationFailed(String message) {
         Assert.assertTrue(registerPage.getRegisterMessage().contentEquals("Vielen Dank für Ihre Registrierung."));
     }
+
+
+    // B2B register steps
+    @Step
+    public void selectRegisterMode(){registerPage.setRegisterMode();}
+
+    @Step
+    public void inputCompanyName(String companyname){registerPage.inputCompanyName(companyname);}
+
+    @Step
+    public void inputCompanyNumber(String companynumber){registerPage.inputCompanyNumber(companynumber);}
+
+    @Step
+    public void inputCompanyFirstName(String companyfirstname){registerPage.inputCompanyFirstName(companyfirstname);}
+
+    @Step
+    public void inputCompanyLastName(String companylastname){registerPage.inputCompanyLastName(companylastname);}
+
+    @Step
+    public void selectCompanyDay(){registerPage.setCompanyDay();}
+
+    @Step
+    public void selectCompanyMonth(){registerPage.setCompanyMonth();}
+
+    @Step
+    public void selectCompanyYear(){registerPage.setCompanyYear();}
+
+    @Step
+    public void inputCompanyEmail(String compemail){registerPage.setCompanyEmail(compemail);}
+
+    @Step
+    public void inputPasswrd(String passw){registerPage.setPassword(passw);}
+
+    @Step
+    public void checkPassword(String repass){registerPage.checkPassword(repass);}
+
+    @Step
+    public void termsAndCondition(){registerPage.acceptConditions();}
+
+    @Step
+    public void finalButton(){registerPage.sendRegisterCompanyForm();}
+
+    @Step
+    public void loginHmc(String user, String pass){hmcLoginPage.loginHmc(user, pass);}
+
+    @Step
+    public void inputUser(){hmcPages.clickOnUserTab();}
+
+    @Step
+    public void inputCustomers(){hmcPages.clickOnCustomersTab();}
+
+    @Step
+    public void inputId(String key){hmcPages.inputItem(key);}
+
+    @Step
+    public void search(){hmcPages.clickOnSearchButton();}
+
+    @Step
+    public void selectItem(){hmcPages.clickOnResult();}
+
+    @Step
+    public void openDropdownMenu(){hmcPages.clickOnOptions();}
+
+    @Step
+    public void approveAccount(String status){hmcPages.clickOnApprovedStatus(status);}
+
+    @Step
+    public void saveInformation(){hmcPages.saveOptions();}
+
+    @Step
+    public void finalLogin(String compemail, String passw){loginPage.login(compemail, passw);}
 }

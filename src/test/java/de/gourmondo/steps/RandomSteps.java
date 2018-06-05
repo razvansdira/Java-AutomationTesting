@@ -29,7 +29,12 @@ public class RandomSteps extends ScenarioSteps{
     }
 
     @Step
-    public void selectRandomProduct(){
+    public void selectRandomProduct() {
         homePage.clickOnRandomProduct();
+    }
+
+    @Step
+    public void closePopUp(){
+        homePage.clickOnXPopup();
     }
 }

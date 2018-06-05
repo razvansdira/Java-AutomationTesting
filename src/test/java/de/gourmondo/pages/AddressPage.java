@@ -4,7 +4,7 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 
-public class AddressPage extends PageObject{
+public class AddressPage extends PageObject {
 
     @FindBy(css = "#addBillingDefaultAddressForm-street")
     private WebElement street;
@@ -30,19 +30,36 @@ public class AddressPage extends PageObject{
     @FindBy(css = "[class=\"btn btn-primary btn-lg text-uppercase btn-extra-padding js-next js-disable-payment-options\"]")
     private WebElement continuePayment;
 
-    public void inputStreet(String name){street.sendKeys("test");}
+    public void inputStreet(String name) {
+        street.sendKeys("test");
+    }
 
-    public void inputNumber(String no){number.sendKeys("4");}
+    public void inputNumber(String no) {
+        number.sendKeys("4");
+    }
 
-    public void inputPostCode(String pcode){postcode.sendKeys("330334");}
+    public void inputPostCode(String pcode) {
+        postcode.sendKeys("330334");
+    }
 
-    public void inputCity(String town){city.sendKeys("Test");}
+    public void inputCity(String town) {
+        city.sendKeys("Test");
+    }
 
-    public void submitForm(){submit.click();}
+    public void submitForm() {
+        submit.click();
+    }
 
-    public void clickContinue(){continueButton.click();}
+    public void clickContinue() {
+        continueButton.click();
+    }
 
-    public void passDelivery(){continueDelivery.click();}
+    public void passDelivery() {
+        continueDelivery.click();
+        waitABit(5000);
+    }
 
-    public void passPayment(){continuePayment.click();}
+    public void passPayment() {
+        continuePayment.click();
+    }
 }
