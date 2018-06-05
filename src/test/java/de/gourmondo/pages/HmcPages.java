@@ -68,6 +68,5 @@ public class HmcPages extends PageObject {
 //        }
     }
 
-    public void saveOptions(){
-        saveButton.click();}
+    public void saveOptions(){saveButton.click();}
 }
