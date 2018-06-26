@@ -23,6 +23,8 @@ public class HmcLoginPage extends PageObject{
 
     public void loginHmc(String user, String pass){
         getDriver().navigate().to("https://stage.gourmondo.de/hmc/hybris");
+//        getDriver().navigate().to("https://test.gourmondo.de/hmc/hybris");
+
         inputUser.sendKeys("admin");
         inputPass.sendKeys("1.Grmd!");
         button.click();
