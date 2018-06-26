@@ -14,6 +14,7 @@ public class RegisterSteps extends ScenarioSteps {
     private MyAccountPage myAccountPage;
     private HmcLoginPage hmcLoginPage;
     private HmcPages hmcPages;
+    private EmailPages emailPages;
 
     @Step
     public void navigateToHomePage() {homePage.open();}
@@ -132,4 +133,21 @@ public class RegisterSteps extends ScenarioSteps {
 
     @Step
     public void finalLogin(String compemail, String passw){loginPage.login(compemail, passw);}
+
+    @Step
+    public void navigateToMailinatorPage() {
+        emailPages.navigateToMailinator();
+        Assert.assertTrue(emailPages.getEmailTime().contentEquals("moments ago"));
+    }
+
+    @Step
+    public void navigateToHmcPage(){
+        getDriver().navigate().to("https://stage.gourmondo.de/hmc/hybris");
+    }
+
+    @Step
+    public void deleteHmcUser(){hmcPages.deleteUser();}
+
+    @Step
+    public void confirmDeletePopup(){hmcPages.confirmDelete();}
 }
