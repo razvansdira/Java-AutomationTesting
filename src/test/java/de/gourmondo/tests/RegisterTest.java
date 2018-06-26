@@ -83,5 +83,10 @@ public class RegisterTest {
         registerSteps.navigateToHomePage();
         registerSteps.navigateToLoginPage();
         registerSteps.finalLogin(compemail, passw);
+        registerSteps.navigateToMailinatorPage();
+        registerSteps.navigateToHmcPage();
+        registerSteps.selectItem();
+        registerSteps.deleteHmcUser();
+        registerSteps.confirmDeletePopup();
     }
 }
